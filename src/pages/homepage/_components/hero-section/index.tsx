@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import useInterval from "../../../../hooks/useInterval";
 import { heroBgSlides } from "../../../../constants";
 import Button from "../../../../components/ui/button";

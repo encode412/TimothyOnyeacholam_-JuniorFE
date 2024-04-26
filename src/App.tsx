@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/ui/navbar'
 import Homepage from './pages/homepage'
 import Capsules from './pages/capsules'
-import store from './store/store'
 
 function App() {
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Loader from '../../../../components/ui/loader'
 import { useSelector } from "react-redux";
 import Card from "./card";
@@ -11,7 +11,7 @@ const RocketLists = () => {
 
   const { data, isFetching } = useGetAllRocketsQuery();
   const inputData = useSelector((state) => state.filters.value.input);
-  const category = useSelector((state) => state.filters.value.selectedCategory);
+  const category = useSelector((state) =>  state.filters.value.selectedCategory);
 
   if (isFetching) {
     return <Loader />;
@@ -32,8 +32,9 @@ const RocketLists = () => {
           </div>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1  gap-10 pt-10">
             {(category === "" || inputData === "") &&
-              currentRocket?.map((rocket, i) => (
+              currentRocket?.map((rocket) => (
                 <Card
+                showButton={true}
                   rocket={rocket}
                   key={rocket.capsule_serial}
                   
@@ -42,8 +43,9 @@ const RocketLists = () => {
             {category === "status" &&
               currentRocket
                 ?.filter((rocket) => rocket.status === inputData)
-                .map((rocket, i) => (
+                .map((rocket) => (
                   <Card
+                  showButton={true}
                     rocket={rocket}
                     key={rocket.capsule_serial}
                     
@@ -54,6 +56,7 @@ const RocketLists = () => {
                 ?.filter((rocket) => rocket.type === inputData)
                 .map((rocket, i) => (
                   <Card
+                  showButton={true}
                     rocket={rocket}
                     key={rocket.capsule_serial}
                     onClick={console.log(rocket.capsule_serial)}
@@ -64,8 +67,9 @@ const RocketLists = () => {
             {category === "original_launch" &&
               currentRocket
                 ?.filter((rocket) => rocket.original_launch === inputData)
-                .map((rocket, i) => (
+                .map((rocket) => (
                   <Card
+                  showButton={true}
                     rocket={rocket}
                     key={rocket.capsule_serial}
                     
