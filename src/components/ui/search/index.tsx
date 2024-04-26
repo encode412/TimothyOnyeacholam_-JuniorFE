@@ -52,9 +52,9 @@ const Select = () => {
       {showDropdown && (
         <div className="md:absolute static w-full z-20 lg:top-[-5.5rem] md:top-[4rem] md:left-[6rem] lg:left-[30rem] md:w-[550px] lg:w-[650px] flex items-start bg-primary shadow-xl text-black font-medium text-base rounded-[10px] mt-4 py-2 gap-2 md:gap-0 lg:gap-5 overflow-y-auto px-6 flex-col animate-slide_up">
           {categories.map((category) => (
-            <>
+            <span key={category.id}>
               <span
-                key={category.id}
+                
                 className="hover:cursor-pointer p-[5px] lg:p-[10px]"
                 onClick={() => {
                   setSelectedCategory(category.value);
@@ -64,7 +64,7 @@ const Select = () => {
               >
                 {category.category}
               </span>
-            </>
+            </span>
           ))}
         </div>
       )}
