@@ -25,10 +25,10 @@ const Card: React.FC<CardTypes> = ({ rocket, showButton }) => {
     
   }
   return (
-    <>
+    <div key={rocket?.capsule_serial}>
    
     <div
-      key={rocket?.original_launch}
+      
       onClick={handleClick}
       className="flex flex-col gap-1 md:gap-3 hover:scale-105 hover:cursor-pointer justify-between transition-all ease-in bg-primary px-6 py-8 shadow-xl"
     >
@@ -47,8 +47,9 @@ const Card: React.FC<CardTypes> = ({ rocket, showButton }) => {
         <span className="text-sm font-semibold">{rocket?.landings}</span>
       </div>
       <div className="flex justify-between">
-        <span className="text-xs">Serial</span>
-        <span className="text-sm font-semibold">{rocket?.landings}</span>
+        <span className="text-xs">Original Launch</span>
+        <span className="text-xs text-nowrap
+         font-semibold">{rocket?.original_launch}</span>
       </div>
       {rocket?.missions.length > 0 ? (
         rocket?.missions.map((mission) => (
@@ -86,7 +87,7 @@ const Card: React.FC<CardTypes> = ({ rocket, showButton }) => {
       </div>
       
     </div>
-    </>
+    </div>
   );
 };
 

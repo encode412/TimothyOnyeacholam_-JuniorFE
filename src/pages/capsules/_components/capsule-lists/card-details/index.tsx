@@ -16,7 +16,6 @@ const CardDetails = () => {
 const handleClose = () => {
   dispatch(overlay(false))
 }
-// console.log(data)
   return (
       <div className=' px-10 py-10'>
         <span className="text-4xl flex justify-end py-6 hover:cursor-pointer" onClick={handleClose}>X</span>

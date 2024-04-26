@@ -5,7 +5,6 @@ import Select from '../../components/ui/search'
 
 const Homepage = () => {
   const [searchClick, setSearchClick] = useState(false)
-  console.log(searchClick)
   const handleClick = (click) => {
     setSearchClick(click)
   }
