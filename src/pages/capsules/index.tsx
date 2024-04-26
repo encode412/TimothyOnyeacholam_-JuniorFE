@@ -19,7 +19,7 @@ const Capsules = () => {
       <div
         className={`${
           overlayState ? "absolute" : "hidden"
-        } z-[999] lg:top-[50rem] top-[23rem] w-[77%] lg:w-[30%] shadow-xl bg-primary bg-opacity-60 left-[3rem] lg:left-[40rem]`}
+        } z-[999] lg:top-[50rem] md:top-[40rem] md:left-[5.5rem] top-[23rem] w-[77%] lg:w-[30%] shadow-xl bg-primary bg-opacity-60 left-[3rem] lg:left-[40rem]`}
       >
         <CardDetails />
       </div>
